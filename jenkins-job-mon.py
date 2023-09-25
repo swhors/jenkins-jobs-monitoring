@@ -37,11 +37,6 @@ def __init(is_daemon: bool):
 
 def sig_handler(signum, frame):
     if signum in [signal.SIGTERM, signal.SIGINT]:
-        try:
-            if os.path.isfile(PID_FILE):
-                os.remove(PID_FILE)
-        except Exception:
-            pass
         __fint()
         exit()
 
