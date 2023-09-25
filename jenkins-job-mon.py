@@ -75,6 +75,7 @@ def __daemonize():
 
             with open(PID_FILE, "w") as fp:
                 fp.write(str(os.getpid()))
+                fp.close()
                 __init(is_daemon=True)
                 __run()
 
